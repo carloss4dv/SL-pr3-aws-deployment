@@ -1,0 +1,2 @@
+
+C:\Users\theca\Desktop\SL-pr3-aws\dosbox\Database-MSDOS>DOSBox-0.74\DOSBox.exe Database\gwbasic.bat -noconsole 
