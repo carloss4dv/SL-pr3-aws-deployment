@@ -28,6 +28,18 @@ def get_all_programs():
     except Exception as e:
         return jsonify(error=str(e)), 500
 
+@app.route('/tape', methods=['POST'])
+def get_all_programs_by_tape():
+    db = Database()
+    data = request.get_json()
+    tape_name = data.get('tape_name')
+    
+    try:
+        programs = db.get_programs_by_tape(tape_name)  # Obtiene la lista de programas
+        return jsonify(programs=programs), 200
+    except Exception as e:
+        return jsonify(error=str(e)), 500
+
 
 
 # Ruta para obtener la cuenta total de registros
