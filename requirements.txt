@@ -1,3 +1,4 @@
 pynput
 pygetwindow
 flask
+flask_cors
