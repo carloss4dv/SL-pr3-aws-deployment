@@ -1,8 +1,9 @@
 from flask import Flask, request, jsonify
 from lib.database import Database  # Importa tu clase que controla DOSBox
+from flask_cors import CORS
 
 app = Flask(__name__)
-
+CORS(app)
 #Buscar un porgrama
 @app.route('/specfic-program-data', methods=['POST'])
 def get_specific_program_data():
