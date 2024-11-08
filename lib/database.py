@@ -278,12 +278,15 @@ class Database(metaclass=Singleton):
 
     def get_specific_program_data(self, program_name: str):
         self.__init_emulator()
-        self.__read_single_register(self.__get_reg_by_name(program_name))
-        self.__process_single_register()
-        self.__close_windows()
-        self.__close_app()  
-        
-        return self.__single_reg
+        reg = self.__get_reg_by_name(program_name)
+        if(reg == None):
+          self.__read_single_register(reg)
+          self.__process_single_register()
+          self.__close_windows()
+          self.__close_app()  
+          return self.__single_reg
+        return " "
+
 
     def get_total_reg_count(self) -> int:
         return self.__regs["total_reg"]
